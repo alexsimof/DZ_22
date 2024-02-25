@@ -43,6 +43,7 @@ activeButtonBlack.onclick = function () {
   bet.setAttribute("disabled", "disabled");
   text.innerText = 'Ставки сделаны, ставок больше нет!'
   button.classList.remove('show')
+  activeButtonBlack = true
 };
 
 
@@ -54,7 +55,7 @@ button.onclick = function () {
   let colors = ['#fd0000', '#000000'];
   let randomColor = colors[randomInteger(0, colors.length - 1)];
   let finish = document.getElementById('finish');
-  console.log(randomColor)
+
   if (activeButtonRed == true) {
     if (randomColor == '#fd0000') {
       finish.innerText = 'Ура! Вы выйграли!'
@@ -64,5 +65,16 @@ button.onclick = function () {
   } else {
     finish.innerText = 'Сожалеем! Вы проиграли!'
   }
+
+  if (activeButtonBlack == true) {
+    if (randomColor == '#000000') {
+      finish.innerText = 'Ура! Вы выйграли!'
+    } else {
+      finish.innerText = 'Сожалеем! Вы проиграли!'
+    }
+  } else {
+    finish.innerText = 'Сожалеем! Вы проиграли!'
+  }
 }
+
 // знаю что этот код не идеален)) но как его улучшить не знаю... ((
